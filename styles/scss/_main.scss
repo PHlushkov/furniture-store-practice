@@ -1,0 +1,418 @@
+.page {
+    flex: 1 1 auto;
+    // margin-top: 100px;
+}
+
+.main-slider {
+    background-color: #fcf8f3;
+
+    &__container {
+        position: relative;
+        @media (min-width: $md2) {
+            &::before{
+                content: "";
+                background-color: #f9f1e7;
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                right: 376px;
+                height: 100%;
+            }
+        }
+    }
+
+    &__body {
+        padding: 140px 0px 0px 0px;
+        position: relative;
+        z-index: 2;
+        @media (max-width: $md2) {
+            padding: 80px 0px 0px 0px;
+        }
+        @media (max-width: $md3) {
+            padding: 50px 0px 0px 0px;
+        }
+        @media (min-width: $md2) {
+            display: flex;        
+        }
+    }
+
+    &__content {
+        flex: 0 0 calc(494/1240 * 100%);
+    }
+
+    &__slider {
+        flex: 1 1 auto;
+        min-width: 0;
+        @media (min-width: $md2) {
+            padding: 0px 0px 0px 32px;
+        }
+    }
+}
+
+.content-main {
+    position: relative;
+    z-index: 5;
+    padding: 60px 15px;
+    background-color: rgba(255, 255, 255, 0.72);
+    @media (min-width: $md2) {
+        padding: 60px;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    &__title{
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 120%;
+        &:not(:last-child){
+            margin: 0px 0px calc(16px/56px*1em) 0 px;
+        }
+        @media (max-width: $maxWidthContainer) {
+            font-size: 35px;
+        }
+    }
+
+    &__text{
+        font-size: 20px;
+        color: $greyColor;
+        font-weight: 500;
+        line-height: 150%;
+        &:not(:last-child){
+            margin: 0px 0px calc(48px/20px*1em) 0px;
+        }
+    }
+
+    &__button{
+        font-size: 20px;
+        background-color: $orangeColor;
+        color: #fff;
+        padding: 24px 140px;
+        display: flex;
+        justify-content: center;
+        &:hover{
+            background-color: #966749;
+        }
+        @media (max-width: $maxWidthContainer) {
+            padding: 20px 100px;
+            font-size: 13px;
+        }
+    }
+}
+
+.slider-main{
+
+    &__controls {
+        margin: 0px 0px 20px 0px;
+    }
+
+
+    &__slide{   
+        width: 100%;
+        position: relative;
+    }
+
+
+    &__content{
+        min-width: 295px;
+        max-height: 300px;
+        overflow: auto;
+        z-index: 5;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        @media (min-width: $md3) {
+            position: absolute;
+            min-width: 350px;
+            bottom: 40px;
+            right: 40px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        @media (max-width: $md2) {
+            margin: 0px -15px;
+        }
+    }
+
+    &__title{
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 120%;
+        margin: 0px 0px calc(4px/28px*1em) 0px;
+    }
+
+    &__text{
+        line-height: 150%;
+        color: $greyColor;
+        &:not(:last-child){
+            margin: 0px 0px calc(8px/16px*1em) 0px;
+        }
+    }
+
+    &__price{
+        line-height: 150%;
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
+
+.controls-slider-main{
+    display: flex;
+    justify-content: space-between;
+}
+
+// ============================================================================================
+
+.advantages{
+    padding: 88px 0px;
+
+    &__container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item{
+        display: inline-grid;
+        padding: 15px 0;
+        grid-template: auto auto / 85px 1fr;
+
+        @media (max-width: $md2) {
+            min-width: 280px;
+        }
+
+        @media (max-width: $md3) {
+            grid-template: auto auto / auto 1fr;
+        }
+    }
+
+    &__icon{
+        text-align: center;
+        align-self: center;
+        grid-row: span 2;
+        @media (max-width: $md3) {
+            padding: 0px 15px 0px 0px;
+        }
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        margin: 0px 0px calc(2px/18px*1em) 0px;
+    }
+    
+    &__text {
+        line-height: 150%;
+        color: $greyColor;
+    }
+}
+
+// ===================================================================================================
+
+.products{
+    padding-bottom: 44px;
+
+    @media (max-width: $md3) {
+        padding-bottom: 10px;
+    }
+
+
+    &__title{
+        margin: 0px 0px calc(32px/40px * 1em) 0px;
+    }
+
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+        gap: 32px;
+    }
+
+    &__footer{
+        padding: 32px 0px 0px 0px;
+        text-align: center;
+    }
+
+    &__more {
+        transition: all 0.5s ease 0s;
+        padding: 12px 82px;
+        color: $orangeColor;
+        border: 1px solid $orangeColor;
+        min-width: 245px;
+        &:hover{
+            transition: all 0.5s ease 0s;
+            background-color: $orangeColor;
+            color: #fff;
+        }
+        &._hold{
+            opacity: 0.2;
+            cursor: default;
+        }
+    }
+}
+
+.item-product{
+    background: #f4f5f7;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+    @media (any-hover:hover) {
+        &:hover{
+            .item-product__actions{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__labels{
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        right: 24px;
+        top: 24px;
+    }
+
+    &__label{
+        flex: 0 0 48px;
+        width: 48px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-weight: 500;
+        &:not(:last-child){
+            margin: 0px 0px 10px 0px;
+        }
+
+        &_sale{
+            background: #e97171;
+        }
+
+        &_new{
+            background: #2ec1ac;
+        }
+    }
+
+    &__img{
+        width: 100%;
+    }
+
+    &__body{
+        flex: 1 1 auto;
+        padding: 16px 16px 30px 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content{
+        flex: 1 1 auto;
+    }
+
+    &__title{
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 120%;
+        margin: 0px 0px calc(8px/24px*1em) 0px;
+    }
+
+    &__text{
+        color: $greyColor;
+        line-height: 150%;
+        margin: 0px 0px calc(8px/24px*1em) 0px;
+    }
+
+    &__prices{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 150%;
+    }
+
+    &__price{
+        font-size: 20px;
+        font-weight: 600;
+
+        &-old{
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0px 0px 0px 16px;
+            color: #b0b0b0;
+            text-decoration: line-through;
+        }
+    }
+
+    &__actions {
+        @media (any-hover: none) {
+            padding: 15px 0px 0px 0px;
+        }
+
+        @media (any-hover: hover) {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease 0s;
+            background-color: rgba(58, 58, 58, 0.74);
+            z-index: 3;
+            .actions-product__button{
+                transition: all 0.5s ease 0s;
+                width: 40px;
+                &:hover{
+                    background-color: $orangeColor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.actions-product {
+    &__body{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__button{
+        color: $orangeColor;
+        flex: 1 1 100%;
+        background-color: #fff;
+        text-align: center;
+        padding: 12px 58px;
+        &:not(:last-child) {
+            margin: 0px 0px 24px 0px
+        }
+        &._hold{
+            opacity: 0.2;
+            cursor: default;
+        }
+        
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        font-weight: 600;
+        transition: color 0.3s ease 0s;
+        &::before{
+            margin: 0px 10px 0px 0px;
+            font-size: 16px;
+        }   
+        @media (any-hover: hover) {
+            color: #fff;
+            &:hover {
+                color: $orangeColor;
+            }
+        }
+    }
+}

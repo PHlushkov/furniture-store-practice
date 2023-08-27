@@ -1,0 +1,57 @@
+// fonts
+
+$gilroyBold: 'Gilroy-Bold', sans-serif;
+$gilroyRegular: 'Gilroy-Regular', sans-serif;
+$gilroyMedium: 'Gilroy-Medium', sans-serif;
+$gilroyHeavy: 'Gilroy-Heavy', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+// input{
+//     width: 100%;
+//     border: none;
+// }
+
+
+//color
+
+$mainColor: #3A3A3A;
+$orangeColor: #E89F71;
+$greyColor: #898989;
+$darkGreyColor: #616161;
+
+// variables
+
+$maxWidth: 1440px;
+$maxWidthContainer: 1270px;
+$md1: $maxWidthContainer + 12px;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+
+body {
+    font-family: $gilroyRegular;
+    font-size: 16px;
+    color: $mainColor;
+    // background-color: #F9F1E7;
+}
+
+
+._title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+}

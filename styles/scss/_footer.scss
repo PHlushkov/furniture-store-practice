@@ -1,0 +1,179 @@
+@use "sass:math";
+
+.footer {
+
+    &__body{
+        margin-top: 35px;
+        border-top: 1px solid #d8d8d8;
+        display: grid;
+        grid-template-columns: 250px 1fr 290px;
+        padding-top: 80px;
+        padding-bottom: 60px;
+        column-gap: 76px;
+
+        @media(max-width: $md1) {
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 290px;
+        }
+        @media (max-width: $md2) {
+            display: block;
+        }
+        @media (max-width: $md3) {
+            margin-top: 30px;
+            padding-top: 41px;
+        }
+    }
+
+    &__main{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (max-width: $md1) {
+            grid-column: span 2;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__logo{
+        margin: 0px 0px calc(16px/24px * 1em) 0px;
+    }
+
+    &__text{
+        color: $greyColor;
+        line-height: 150%;
+        &:not(:last-child){
+            margin: 0px 0px 1em 0px;
+        }
+    }
+
+    &__menu{
+        @media (max-width: $md2) {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.contacts-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &__item{
+        display: inline-flex;
+        align-items: center;
+        line-height: 150%;
+        color: $greyColor;
+        transition: color 0.3s ease 0s;
+        &::before{
+            margin: 0px 8px 0px 0px;
+        }
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+        @media (any-hover: hover) {
+            &:hover{
+                color: $orangeColor;
+            }
+        }
+    }
+}
+
+.menu-footer{
+    @media (min-width: $md3) {
+        display: flex;
+    }
+
+    &__column{
+        @media (min-width: $md3) {
+            flex: 0 1 33.333%;
+            &-img{
+                display: none;
+            }
+        }
+        &-img{
+            width: 19px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+    }
+
+    &__column-img.active{
+        transform: rotate(-180deg);
+        transition: transform 0.3s;
+    }
+
+    &__title{
+        cursor: default;
+        margin: 0px 0px calc(16px/24px * 1em) 0px;
+    }
+
+    &__list{
+        @media (max-width: $md3) {
+            visibility: hidden;
+            max-height: 0;
+            transition:  max-height 0.3s ease 0s;
+        }
+
+        &.active{
+            padding-bottom: 10px;
+            visibility: visible;
+            max-height: 180px;
+            transition:  max-height 0.3s ease 0s;
+        }
+
+
+        li{
+            &:not(:last-child){
+                margin: 0px 0px 15px 0px;
+            }
+        }
+    }
+
+    &__link{
+        color: $darkGreyColor;
+        transition: color 0.3s ease 0s;
+        line-height: 120%;
+        font-weight: 500;
+        @media (any-hover:hover) {
+            &:hover{
+                color: $orangeColor;
+            }
+        }
+    }
+}
+
+.subscribe{
+
+    &__title{
+        margin: 0px 0px calc(16px / 24px * 1em) 0px;
+    }
+
+    &__form{
+        display: flex;
+        position: relative;
+    }
+
+    &__button{
+        cursor: pointer;
+        border: none;
+        flex: 0 0 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        background-color: $orangeColor;
+        color: #fff;
+        margin: 0px 0px 0px 4px;
+        transition: background-color 0.3s ease 0s;
+        &:hover{
+            background-color: #be825c;
+        }
+    }
+
+    &__input{
+        width: 100%;
+        border: none;
+        background-color: #F4F5F7;
+        padding-left: 15px;
+    }
+}
